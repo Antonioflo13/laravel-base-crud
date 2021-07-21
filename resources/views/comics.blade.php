@@ -13,6 +13,11 @@
                     <h4 class="card-title">{{ $comic->title }}</h4>
                     <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">Vedi dettagli fumetto</a>
                     <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary">Modifica fumetto</a>
+                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" class="btn btn-danger" value="Cancella fumetto">
+                    </form>
                 </div>
               </div>
             @endforeach

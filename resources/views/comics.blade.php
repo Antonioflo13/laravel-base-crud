@@ -11,7 +11,8 @@
                 <a href="{{ route('comics.show', $comic->id) }}"><img class="card-img-top"  src="{{ $comic->thumb }}" alt="{{ $comic->title }}"></a>
                 <div class="card-body">
                     <h4 class="card-title">{{ $comic->title }}</h4>
-                    <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">Vai al fumetto!</a>
+                    <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">Vedi dettagli fumetto</a>
+                    <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary">Modifica fumetto</a>
                 </div>
               </div>
             @endforeach

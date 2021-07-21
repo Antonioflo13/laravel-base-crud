@@ -12,7 +12,7 @@
                     <h4 class="card-title mb-4">{{ $comic->title }}</h4>
                     <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary mb-4">Vedi dettagli fumetto</a>
                     <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary mb-4">Modifica fumetto</a>
-                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST" onSubmit = "return confirm('Sei sicuro di voler cancellare definitivamente {{ $comic->title }}?')">
                         @csrf
                         @method('DELETE')
                         <input type="submit" class="btn btn-danger" value="Cancella fumetto">
